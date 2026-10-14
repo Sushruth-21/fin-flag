@@ -1,0 +1,4 @@
+.env
+finflag.db
+__pycache__/
+*.pyc

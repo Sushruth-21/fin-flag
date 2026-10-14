@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block main %}
+    <input id="min-amount" placeholder="minimum" type="number">
+
+    <input id="max-amount" placeholder="maximum" type="number">
+
+    <button onclick="applyFilter()" class="btn btn-success">Apply Filter</button>
+    
+    <table>
+        <thead>
+            <tr>
+                <th class="text-start">User ID</th>
+                <th class="text-end">Amount</th>
+                <th class="text-end">Flag Reason</th>
+                <th class="text-end">Time</th>
+            </tr>
+        </thead>
+        <tbody id="alert-box">
+
+        </tbody>
+    </table>
+
+    <!-- Pagination Controls -->
+    <div class="d-flex justify-content-center align-items-center mt-3 gap-3">
+        <button id="prev-btn" class="btn btn-secondary" onclick="prevPage()">Previous</button>
+        <span id="page-indicator" class="fw-bold">Page 1</span>
+        <button id="next-btn" class="btn btn-primary" onclick="nextPage()">Next</button>
+    </div>
+    <script src="/static/dashboard.js"></script>
+{% endblock %}

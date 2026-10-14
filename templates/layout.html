@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Fin-Flag | {% block title %} {% endblock %}</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    </head>
+    <body>
+        <nav>
+            <!-- <a> tags create clickable hyperlinks -->
+            <a href="/">Terminal (Submit Data)</a>
+            <a href="/dashboard">SOC Dashboard</a>
+            
+            <!-- We can use CSS later to push these next two to the right side -->
+            <a href="/register">Add Admin</a>
+            <a href="/logout">Logout</a>
+        </nav>
+        <main>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <div class="flash-message">
+                        {% for message in messages %}
+                            {{ message }}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endwith %}
+            {% block main %}
+
+            
+            {% endblock %}
+        </main>
+    </body>
+</html>
